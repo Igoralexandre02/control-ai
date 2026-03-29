@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('cnpj', 14);
             $table->string('email');
             $table->string('telefone');
-            $table->string('ativo');
+            $table->string('ativo')->default(true);
             $table->timestamps();
         });
     }

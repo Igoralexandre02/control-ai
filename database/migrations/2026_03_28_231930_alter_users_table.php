@@ -12,7 +12,7 @@ return new class extends Migration {
     {
         Schema::table('users', function (Blueprint $table) {
             $table->string('cpf', 11)->after('name')->unique();
-            $table->boolean('ativo');
+            $table->boolean('ativo')->default(true);
         });
     }
 

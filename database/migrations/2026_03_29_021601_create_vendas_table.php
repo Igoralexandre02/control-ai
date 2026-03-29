@@ -16,7 +16,7 @@ return new class extends Migration
             $table->foreignId('empresa_id')->constrained(table: 'empresas')->onUpdate('cascade')->onDelete('cascade');
             $table->foreignId('user_id')->constrained(table: 'users')->onUpdate('cascade')->onDelete('cascade');
             $table->decimal('valor_total');
-            $table->string('status');
+            $table->string('status')->comment('pendente, finalizada, cancelada, estornada');
             $table->timestamps();
         });
     }

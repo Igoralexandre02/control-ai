@@ -15,7 +15,7 @@ return new class extends Migration {
             $table->foreignId('empresa_id')->constrained(table: 'empresas')->onUpdate('cascade')->onDelete('cascade');
             $table->string('nome', 255);
             $table->decimal('saldo_atual');
-            $table->boolean('ativo');
+            $table->boolean('ativo')->default(true);
             $table->timestamps();
         });
     }
