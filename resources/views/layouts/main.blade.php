@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="dark">
 
 <head>
-  <title>{{ config('app.name', 'Laravel') }}</title>
+  <title>@yield('title')</title>
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,10 +13,21 @@
   @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
-<body>
-  <div class="main-container">
-    @yield('content')
-  </div>
-</body>
+<body class="bg-gray-50 dark:bg-gray-900">
+  <!-- navbar -->
+  <x-navbar />
+  <div class="flex pt-16 bg-gray-50 dark:bg-gray-900">
+    <!-- Sidebar -->
+    <x-sidebar />
+    <!-- Conteúdo -->
+    <div id="main-content" class="w-full h-full overflow-y-auto bg-gray-50 lg:ml-64 dark:bg-gray-900">
+      <main class="p-4 bg-gray-100 dark:bg-gray-900">
+        @yield('content')
+      </main>
+      <!-- footer -->
+      <x-footer />
+    </div>
 
-</html>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/flowbite@4.0.1/dist/flowbite.min.js"></script>
+</body>
