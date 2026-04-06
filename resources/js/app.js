@@ -1,3 +1,5 @@
-import './bootstrap';
-import './sidebar';
-import './dark-mode';
+import './bootstrap'
+import './sidebar'
+import './dark-mode'
+import 'flowbite/dist/flowbite.js'
+import './table'

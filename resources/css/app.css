@@ -1,5 +1,5 @@
 @import 'tailwindcss';
-@import "flowbite/src/themes/default";
+@import 'flowbite/src/themes/default';
 
 @plugin "flowbite/plugin";
 
@@ -23,15 +23,110 @@
     --color-primary-800: #1e40af;
     --color-primary-900: #1e3a8a;
 
-    --font-sans: 'Inter', 'ui-sans-serif', 'system-ui', '-apple-system', 'system-ui', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'Noto Sans', 'sans-serif', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-    --font-body: 'Inter', 'ui-sans-serif', 'system-ui', '-apple-system', 'system-ui', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'Noto Sans', 'sans-serif', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-    --font-mono: 'ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', 'Liberation Mono', 'Courier New', 'monospace';
+    --font-sans: 'Inter', 'ui-sans-serif', 'system-ui', '-apple-system',
+        'system-ui', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial',
+        'Noto Sans', 'sans-serif', 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol', 'Noto Color Emoji';
+    --font-body: 'Inter', 'ui-sans-serif', 'system-ui', '-apple-system',
+        'system-ui', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial',
+        'Noto Sans', 'sans-serif', 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol', 'Noto Color Emoji';
+    --font-mono: 'ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas',
+        'Liberation Mono', 'Courier New', 'monospace';
 }
 
 @layer components {
-    .main-container {
-        @apply flex flex-col h-screen bg-gray-900/90;
-    }
-}
+    /* Layout */
 
-/* fixed inset-0 z-10 bg-gray-900/50 dark:bg-gray-900/90" */
+    .main-container {
+        @apply w-full h-full p-4 overflow-y-auto bg-gray-50 lg:ml-64 dark:bg-gray-900;
+    }
+
+    .body-page {
+        @apply relative overflow-x-auto bg-neutral-primary-soft shadow-xs rounded-base border border-default;
+    }
+
+    /* Layout fim */
+
+    /* Table */
+
+    .gridjs-table {
+        @apply w-full text-sm text-left text-body;
+    }
+
+    .gridjs-th {
+        @apply px-6 py-3 font-medium bg-neutral-secondary-medium border-b border-default-medium;
+    }
+
+    .gridjs-td {
+        @apply px-6 py-4;
+    }
+
+    .gridjs-tr {
+        @apply bg-neutral-primary-soft border-b border-default;
+    }
+
+    .gridjs-search-input {
+        @apply max-w-96 m-2 block ps-6 pe-3 py-2 bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand shadow-xs placeholder:text-body;
+    }
+
+    .gridjs-footer {
+        @apply p-4 text-body -space-x-px text-sm;
+    }
+
+    .gridjs-pagination {
+        @apply items-center;
+    }
+
+    .gridjs-pagination .gridjs-summary {
+        @apply float-start;
+    }
+
+    .gridjs-pagination .gridjs-pages {
+        @apply float-end;
+    }
+
+    .gridjs-pagination .gridjs-pages button {
+        @apply text-body bg-neutral-secondary-medium box-border border border-default-medium hover:bg-neutral-tertiary-medium hover:text-heading font-medium w-10 h-10 focus:outline-none;
+    }
+
+    .gridjs-pagination .gridjs-pages button.gridjs-currentPage {
+        @apply text-fg-brand hover:text-fg-brand;
+    }
+
+    .gridjs-pagination .gridjs-pages button:focus {
+        @apply text-body;
+    }
+
+    .gridjs-pagination .gridjs-pages button:disabled,
+    .gridjs-pagination .gridjs-pages button[disabled],
+    .gridjs-pagination .gridjs-pages button:hover:disabled {
+        @apply text-fg-brand-strong;
+    }
+
+    .gridjs-pagination .gridjs-pages button:last-child {
+        @apply rounded-e-base text-sm px-3;
+    }
+
+    .gridjs-pagination .gridjs-pages button:first-child {
+        @apply rounded-s-base text-sm px-3;
+    }
+
+    /* Table End */
+
+    /* Botões */
+
+    .btn-secondary {
+        @apply text-white bg-brand box-border border border-transparent hover:bg-brand-strong focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none;
+    }
+
+    .btn-default {
+        @apply text-body bg-neutral-secondary-medium box-border border border-default-medium hover:bg-neutral-tertiary-medium hover:text-heading focus:ring-4 focus:ring-neutral-tertiary shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none;
+    }
+
+    .btn-success {
+        @apply text-white bg-success box-border border border-transparent hover:bg-success-strong focus:ring-4 focus:ring-success-medium shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none;
+    }
+
+    /* Botões Fim */
+}
